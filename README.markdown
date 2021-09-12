@@ -64,29 +64,23 @@ $ yarn android  # Necessário para executar o App
 <br />
 
 ## Autor
-<a href="https://app.rocketseat.com.br/me/andrelinosilva">
+<a href="https://andrelino.dev">
 <kbd>
   <img height="150" width="150"
     src="https://github.com/andrelinos.png"
     alt="Avatar do autor" />
 </kbd>
-<br /><b>
+<br />
+<br />
+<b>
 Andrelino Silva 🚀</b></a>
+
+<br />
 
 <p>
     Sou apaixonado por tecnologias e quero muito criar coisas grandes e de ajudar as pessoas. Estou na luta para estudar e conciliar família, estudos, trabalho.
 </p>
 
-
-  | Rede social | Saiba mais |
-  | --- | --- |
-  | GitHub | [https://github.com/andrelinos](https://github.com/andrelinos) |
-  | Linkedin | [https://linkedin.com// in/andrelinosilva](https://linkedin.com/in/andrelinosilva) |
-  | Twitter| [https://twitter.com/ _andrelinosilva](https://twitter.com/_andrelinosilva) |
-  | Facebook | [https://facebook.com/ andrelinossilva](https://facebook.com/andrelinossilva/) |
-  | Instagram| [https://instagram.com/andrelinossilva](https://instagram.com/andrelinossilva/) |
-  | Youtube | [https://youtube.com/ c/AndrelinoSilvas](https://youtube.com/c/AndrelinoSilvas/) |
-  | Rocketseat | [https://app.rocketseat.com.br/ me/andrelinosilva](https://app.rocketseat.com.br/me/andrelinosilva) |
 
 </div>
 </div>
