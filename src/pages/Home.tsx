@@ -1,43 +1,78 @@
 import React, { useState } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { Alert, StyleSheet, View } from 'react-native';
 
 import { Header } from '../components/Header';
 import { Task, TasksList } from '../components/TasksList';
 import { TodoInput } from '../components/TodoInput';
 
 export function Home() {
-  const [tasks, setTasks] = useState<Task[]>([]);
+    const [tasks, setTasks] = useState<Task[]>([]);
 
-  function handleAddTask(newTaskTitle: string) {
-    //TODO - add new task
-  }
+    function handleAddTask(newTaskTitle: string) {
+        const data = {
+            id: new Date().getTime(),
+            title: newTaskTitle,
+            done: false
+        };
 
-  function handleToggleTaskDone(id: number) {
-    //TODO - toggle task done if exists
-  }
+        setTasks((oldTasks) => [...oldTasks, data]);
+    }
 
-  function handleRemoveTask(id: number) {
-    //TODO - remove task from state
-  }
+    function handleToggleTaskDone(id: number) {
+        const updatedTasks = tasks.map((task) => ({ ...task }));
+        const newTasks = updatedTasks.find((task) => task.id === id);
 
-  return (
-    <View style={styles.container}>
-      <Header tasksCounter={tasks.length} />
+        if (!newTasks) {
+            return;
+        }
+        newTasks.done = !newTasks.done;
+        setTasks(updatedTasks);
+    }
 
-      <TodoInput addTask={handleAddTask} />
+    function handleRemoveTask(id: number) {
+        setTasks((oldTasks) => oldTasks.filter((task) => task.id !== id));
 
-      <TasksList 
-        tasks={tasks} 
-        toggleTaskDone={handleToggleTaskDone}
-        removeTask={handleRemoveTask} 
-      />
-    </View>
-  )
+        // Alert.alert(
+        //     'Hey There!',
+        //     `Want to remove this item from your list?`,
+        //     [
+        //         {
+        //             text: 'Yes',
+        //             onPress: () => {
+        //                 setTasks((oldTasks) =>
+        //                 oldTasks.filter((trask) => trask.id !== id),
+        //                 );
+        //             },
+        //         },
+        //         {
+        //             text: 'No',
+        //             style: 'cancel',
+        //         },
+        //     ],
+        //     {
+        //         cancelable: true,
+        //     },
+        // );
+    }
+
+    return (
+        <View style={styles.container}>
+            <Header tasksCounter={tasks.length} />
+
+            <TodoInput addTask={handleAddTask} />
+
+            <TasksList
+                tasks={tasks}
+                toggleTaskDone={handleToggleTaskDone}
+                removeTask={handleRemoveTask}
+            />
+        </View>
+    );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#EBEBEB'
-  }
-})
+    container: {
+        flex: 1,
+        backgroundColor: '#EBEBEB'
+    }
+});
