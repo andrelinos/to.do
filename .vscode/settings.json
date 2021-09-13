@@ -1,0 +1,24 @@
+{
+  "colorize.include": [
+    ".tsx",
+    ".jsx",
+    ".ts",
+    ".js"
+  ],
+  "colorize.languages": [
+    "css",
+    "sass",
+    "scss",
+    "less",
+    "postcss",
+    "sss",
+    "stylus",
+    "xml",
+    "svg",
+    "html",
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+  ],
+}

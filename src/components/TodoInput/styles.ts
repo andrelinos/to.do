@@ -18,7 +18,7 @@ export const styles = StyleSheet.create({
       borderBottomLeftRadius: 5,
       borderRightWidth: 1,
       borderRightColor: '#EBEBEB',
-      color: '#666666'
+      color: '#718093'
   },
   addButton: {
       backgroundColor: '#FFF',

@@ -23,7 +23,7 @@ export interface Task {
 interface TasksListProps {
     tasks: Task[];
     toggleTaskDone: (id: number) => void;
-    removeTask: (id: number) => void;
+    removeTask: (id: number, taskTitle: string) => void;
 }
 
 export function TasksList({
@@ -82,7 +82,7 @@ export function TasksList({
                             testID={`trash-${index}`}
                             style={{ paddingHorizontal: 24 }}
                             onPress={() => {
-                                removeTask(item.id);
+                                removeTask(item.id, item.title);
                             }}
                         >
                             <Image source={trashIcon} />
