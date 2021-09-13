@@ -6,7 +6,8 @@ export const styles = StyleSheet.create({
       paddingTop: getStatusBarHeight(true) + 16,
       paddingHorizontal: 24,
       paddingBottom: 60,
-      backgroundColor: '#8257E5',
+    //   backgroundColor: '#8257E5',
+      backgroundColor: '#22a6b3',
       justifyContent: 'space-between',
       alignItems: 'center',
       flexDirection: 'row'
