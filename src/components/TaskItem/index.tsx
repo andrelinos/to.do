@@ -1,8 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Text, View, TouchableOpacity, Image, TextInput } from 'react-native';
+import { View, TouchableOpacity, TextInput } from 'react-native';
 import Icon from 'react-native-vector-icons/Feather';
-
-import trashIcon from '../../assets/icons/trash/trash.png';
+import IconAnt from 'react-native-vector-icons/AntDesign';
 
 import { styles } from './styles';
 
@@ -60,17 +59,16 @@ export function TaskItem({
 
     return (
         <View style={styles.container}>
-            <View>
+            <View style={styles.infoContainer}>
                 <TouchableOpacity
-                    // testID={`button-${index}`}
                     activeOpacity={0.7}
                     style={styles.taskButton}
                     onPress={() => {
                         toggleTaskDone(task.id);
                     }}
+                    disabled={isEditing}
                 >
                     <View
-                        // testID={`marker-${index}`}
                         style={
                             task.done
                                 ? styles.taskMarkerDone
@@ -81,26 +79,54 @@ export function TaskItem({
                             <Icon name="check" size={12} color="#FFF" />
                         )}
                     </View>
-
-                    <Text
+                    <TextInput
+                        value={taskNewTitleValue}
+                        onChangeText={setTaskNewTitleValue}
+                        editable={isEditing}
+                        onSubmitEditing={handleSubmitEditing}
                         style={
                             task.done ? styles.taskTextDone : styles.taskText
                         }
-                    >
-                        {task.title}
-                    </Text>
+                        ref={textInputRef}
+                    />
                 </TouchableOpacity>
             </View>
 
-            <TouchableOpacity
-                // testID={`trash-${index}`}
-                style={{ paddingHorizontal: 24 }}
-                onPress={() => {
-                    removeTask(task.id, task.title);
-                }}
-            >
-                <Image source={trashIcon} />
-            </TouchableOpacity>
+            <View style={styles.iconsContainer}>
+                {isEditing ? (
+                    <TouchableOpacity
+                        onPress={() => {
+                            handleCancelEditing();
+                        }}
+                    >
+                        <Icon name="x" size={24} color="#b2b2b2" />
+                    </TouchableOpacity>
+                ) : (
+                    <TouchableOpacity
+                        onPress={() => {
+                            handleStartEditing();
+                        }}
+                    >
+                        <IconAnt name="edit" size={24} color="#b2b2b2" />
+                    </TouchableOpacity>
+                )}
+
+                <View style={styles.iconsDivider} />
+
+                <TouchableOpacity
+                    onPress={() => {
+                        removeTask(task.id, task.title);
+                    }}
+                    disabled={isEditing}
+                >
+                    <IconAnt
+                        name="delete"
+                        size={24}
+                        color="#b2b2b2"
+                        style={{ opacity: isEditing ? 0.2 : 1 }}
+                    />
+                </TouchableOpacity>
+            </View>
         </View>
     );
 }
