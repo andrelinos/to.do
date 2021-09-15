@@ -12,7 +12,6 @@ export const styles = StyleSheet.create({
     taskButton: {
         flex: 1,
         paddingHorizontal: 24,
-        paddingVertical: 15,
         marginBottom: 4,
         borderRadius: 4,
         flexDirection: 'row',
@@ -24,7 +23,7 @@ export const styles = StyleSheet.create({
         borderRadius: 4,
         borderWidth: 1,
         borderColor: '#B2B2B2',
-        marginRight: 15,
+        marginRight: 8,
         alignItems: 'center',
         justifyContent: 'center'
     },
@@ -58,7 +57,6 @@ export const styles = StyleSheet.create({
        width: 1,
        height: 24,
        backgroundColor: 'rgba(196, 196, 196, 0.24)',
-       marginLeft: 4,
-       marginRight: 4,
+       marginHorizontal: 8
     }
 });
