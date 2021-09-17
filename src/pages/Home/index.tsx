@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Alert, View } from 'react-native';
 
 import { Header } from '../../components/Header';
@@ -27,6 +28,30 @@ interface TasksListProps {
 
 export function Home() {
     const [tasks, setTasks] = useState<Task[]>([]);
+
+    useEffect(() => {
+        (async () => {
+            const response = await AsyncStorage.getItem('@todoStorageTasks');
+            const tasksResults = JSON.parse(response);
+            setTasks(tasksResults);
+            console.log(tasksResults);
+        })();
+    }, []);
+
+    const storeData = async () => {
+        try {
+            await AsyncStorage.setItem(
+                '@todoStorageTasks',
+                JSON.stringify(tasks)
+            );
+        } catch (e) {
+            return;
+        }
+    };
+
+    useEffect(() => {
+        storeData();
+    }, [tasks]);
 
     function handleAddTask(newTaskTitle: string) {
         const existsTasks = tasks.map((task) => ({ ...task }));
@@ -58,7 +83,6 @@ export function Home() {
         } else {
             setTasks((oldTasks) => [...oldTasks, data]);
         }
-
     }
 
     function handleToggleTaskDone(id: number) {
