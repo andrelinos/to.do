@@ -25,7 +25,7 @@ export function TodoInput({ addTask }: TodoInputProps) {
                 placeholder="Adicionar novo todo..."
                 placeholderTextColor="#B2B2B2"
                 returnKeyType="send"
-                selectionColor="#718093"
+                selectionColor="#0c2461"
                 onChangeText={setTask}
                 value={task}
                 onSubmitEditing={handleAddNewTask}
@@ -36,7 +36,7 @@ export function TodoInput({ addTask }: TodoInputProps) {
                 style={styles.addButton}
                 onPress={handleAddNewTask}
             >
-                <Icon name="chevron-right" size={24} color="#B2B2B2" />
+                <Icon name="chevron-right" size={24} color="#0c2461" />
             </TouchableOpacity>
         </View>
     );

@@ -78,7 +78,7 @@ Andrelino Silva 🚀</b></a>
 <br />
 
 <p>
-    Sou apaixonado por tecnologias e quero muito criar coisas grandes e de ajudar as pessoas. Estou na luta para estudar e conciliar família, estudos, trabalho.
+    Sou apaixonado por tecnologias e quero muito criar coisas grandes e ajudar as pessoas. 
 </p>
 
 

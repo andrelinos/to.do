@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { Alert, View } from 'react-native';
+import { Alert, View, KeyboardAvoidingView } from 'react-native';
 
 import { Header } from '../../components/Header';
 import { TasksList } from '../../components/TasksList';
@@ -32,9 +32,11 @@ export function Home() {
     useEffect(() => {
         (async () => {
             const response = await AsyncStorage.getItem('@todoStorageTasks');
+
+            if (!response) return;
+
             const tasksResults = JSON.parse(response);
             setTasks(tasksResults);
-            console.log(tasksResults);
         })();
     }, []);
 

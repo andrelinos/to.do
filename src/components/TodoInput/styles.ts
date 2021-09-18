@@ -21,7 +21,7 @@ export const styles = StyleSheet.create({
       color: '#718093'
   },
   addButton: {
-      backgroundColor: '#FFF',
+      backgroundColor: '#c7ecee',
       height: 56,
       paddingHorizontal: 12,
       justifyContent: 'center',

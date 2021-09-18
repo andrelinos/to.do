@@ -1,5 +1,5 @@
 import React from 'react';
-import { FlatList } from 'react-native';
+import { FlatList, SectionList, Text } from 'react-native';
 
 import { ItemWrapper } from '../ItemWrapper';
 import { TaskItem } from '../TaskItem';

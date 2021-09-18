@@ -99,7 +99,7 @@ export function TaskItem({
                             handleCancelEditing();
                         }}
                     >
-                        <Icon name="x" size={24} color="#b2b2b2" />
+                        <Icon name="x" size={24} color="#ff7675" />
                     </TouchableOpacity>
                 ) : (
                     <TouchableOpacity
@@ -107,7 +107,7 @@ export function TaskItem({
                             handleStartEditing();
                         }}
                     >
-                        <IconAnt name="edit" size={24} color="#b2b2b2" />
+                        <IconAnt name="edit" size={24} color="#54a0ff" />
                     </TouchableOpacity>
                 )}
 
@@ -122,7 +122,7 @@ export function TaskItem({
                     <IconAnt
                         name="delete"
                         size={24}
-                        color="#b2b2b2"
+                        color="#ff7675"
                         style={{ opacity: isEditing ? 0.2 : 1 }}
                     />
                 </TouchableOpacity>
