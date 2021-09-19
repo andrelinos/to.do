@@ -6,7 +6,7 @@ import { Home } from './src/pages/Home';
 
 export default function App() {
     return (
-        <KeyboardAwareScrollView style={{ flex: 1 }} overScrollMode='always'>
+        
             <>
                 <StatusBar
                     barStyle="light-content"
@@ -15,6 +15,6 @@ export default function App() {
                 />
                 <Home />
             </>
-        </KeyboardAwareScrollView>
+    
     );
 }

@@ -19,6 +19,15 @@ Nota: Neste desafio apenas inserimos funções requeridas nos testes. Embora dar
 ### Com algumas tarefas já concluídas
 ![Skills adicionadas](./prtScn/02.png)
 
+### Editando um item da lista
+![Skills adicionadas](./prtScn/03.png)
+
+### Removendo um item da lista
+![Skills adicionadas](./prtScn/04.png)
+
+### Tentando adicionar item existente
+![Skills adicionadas](./prtScn/05.png)
+
 ## Principais tecnologias usadas
 - [React](https://reactjs.org)
 - [React Native](https://reactnative.dev)

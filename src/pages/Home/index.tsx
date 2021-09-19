@@ -105,7 +105,7 @@ export function Home() {
         // setTasks((oldTasks) => oldTasks.filter((task) => task.id !== id));
 
         Alert.alert(
-            'Remover item',
+            'Removendo item da lista',
             `Tem certeza que deseja remover "${taskTitle}" da sua lista?`,
             [
                 {
